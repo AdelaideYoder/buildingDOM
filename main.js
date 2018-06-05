@@ -62,6 +62,8 @@
 const messages = document.querySelector("#messages")
 console.log("Step 2: article id messages", messages);
 
+
+//Step 4: Using appendChild(), attach each message as a child to the messages element.
 // let daisy = document.createElement('section')
 // daisy.textContent = "Daisy is pretty"
 // messages.appendChild(daisy)
@@ -100,3 +102,37 @@ console.log("Step 3 - fragment:", flowers);
 
 // Using appendChild(), attach each message as a child to the messages element.
 document.querySelector("#messages").appendChild(flowers)
+
+//____________________________________________Jisie's code__________________________________________
+//____________________________________________Jisie's code__________________________________________
+messages.appendChild(flowers)
+
+//declare a variable
+const messagesArticle = document.querySelector("#message")
+
+const sectionsFragment = document.createDocumentFragment()
+
+//write a function
+const createSectionEl = (sectionText) => {
+    const sectionEl = document.createElement("section")
+    sectionEl.className = "message"
+    sectionEl.textContect = sectionText
+    return sectionEl
+}
+
+const sectionOne = createSectinEl("Hello")
+sectionsFragment.appendChild(sectionONe)
+const sectionTwo = createSectionEl("Fine")
+
+//call the function
+createSectionEl();
+
+//write a loop to refactor the above code
+const sectionTexts = ["Hello", "Fine"]
+
+for (let i = 0; i < sectionTexts.length; i++) {
+    const sectionElement = createSectionEl(sectionTexts[i])
+    sectionsFragment.appendChild(sectionElement)
+}
+
+messagesArticle.appendChild(sectionsFragment)
